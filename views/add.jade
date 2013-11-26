@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1= title
+  form(method='post', action='/stock')
+    fieldset
+      legend New Product
+      label
+        strong Name
+      input(name='name', type='text')
+      label
+        strong Storage
+      select(name='storage', multiple='multiple')
+        option fridge
+        option freezer
+        option cupboard
+        option wall cupboard
+        option shelf
+      label
+        strong In Stock?
+      label.checkbox.inline
+        input(type='radio', name='availab', value='Yes')
+      | Yes
+      label.checkbox.inline
+        input(type='radio', name='availab', value='No')
+      | No
+      label.checkbox.inline
+        input(type='radio', name='availab', value='Low')
+      | Low
+    fieldset
+      input.btn.btn-large.btn-block.btn-success(type='submit', value='Add')

@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  h1= title
+  if( first==0 )
+    p Welcome to #{title}
+    p Create your stock!
+    p
+      a.btn.btn-primary.btn-large.btn-block(href='/add') ADD
+  else
+    div#prodscroll
+      table.table.table-condensed
+        tr
+          th Product
+          th Add
+          th Edit
+        each prod in nostock
+          tr
+            td.text-error= prod.name
+            td
+              a(href="#")
+                button.btn.btn-mini.btn-success(type="button")
+                  i.icon-chevron-down.icon-white
+            td
+              a(href="#")
+                button.btn.btn-mini.btn-info(type="button")
+                  i.icon-pencil.icon-white
+        each prod in lowstock
+          tr
+            td.text-warning= prod.name
+            td
+              a(href="#")
+                button.btn.btn-mini.btn-success(type="button")
+                  i.icon-chevron-down.icon-white
+            td
+              a(href="#")
+                button.btn.btn-mini.btn-info(type="button")
+                  i.icon-pencil.icon-white
+    p
+      a.btn.btn-primary.btn-large.btn-block(href='/add')
+        i.icon-chevron-down.icon-white
+        i ADD

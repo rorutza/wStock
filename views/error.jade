@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  div.alert.alert-error
+    button.close(type="button", data-dismiss="alert") &times;
+    p
+      strong ERROR!
+      p #{errmsg}
+  p
+    a.btn.btn-primary.btn-large(href='/add') ADD
