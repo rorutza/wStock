@@ -1,0 +1,4 @@
+wStock
+======
+
+Small stock control.
